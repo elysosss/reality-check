@@ -89,6 +89,7 @@ OpenAPI-спека панели ищется по путям `/panel/api/openapi
 | клиент по email (истина об идентификаторе) | `GET /panel/api/clients/get/{email}` |
 | все клиенты | `GET /panel/api/clients/list` |
 | правильные ссылки клиента | `GET /panel/api/clients/subLinks/{subId}` |
+| ссылки клиента, но по устаревшей копии — **не использовать** | `GET /panel/api/clients/links/{email}` |
 | изменить клиента (рассылается по инбаундам) | `POST /panel/api/clients/update/{email}` |
 | кто сейчас онлайн | `POST /panel/api/clients/onlines` |
 | IP клиента | `GET /panel/api/clients/ips/{email}` |

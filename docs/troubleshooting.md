@@ -84,6 +84,7 @@ DNS не резолвит (`/etc/resolv.conf`, DNS-секция конфига X
 хранится лишь его копия. Копия может устареть. Тогда:
 
 * `/panel/api/clients/subLinks/{subId}` отдаёт верную ссылку;
+* `/panel/api/clients/links/{email}` — тоже по копии, тоже мёртвую;
 * `/panel/api/inbounds/allLinks` и `inbounds/list` — мёртвый идентификатор;
 * Xray работает по значению из таблицы клиентов, то есть по верному.
 
