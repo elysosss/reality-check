@@ -1,0 +1,32 @@
+# Скопируй в config/servers.yaml и заполни. servers.yaml в git не попадает.
+# Секреты можно не писать в файл, а подставить из окружения: api_token: "${ENV:DE1_TOKEN}"
+
+servers:
+  - name: de-1                      # короткое имя, им будешь пользоваться в командах
+    panel:
+      url: https://1.2.3.4:2053     # адрес панели вместе с портом
+      base_path: ""                 # webBasePath, если у панели он задан (без слешей)
+      api_token: ""                 # Settings -> Security -> API Token, если версия панели умеет
+      username: ""                  # запасной вариант: логин/пароль от панели
+      password: ""
+      two_factor_code: ""           # только если включена 2FA (код живёт 30 секунд)
+      verify_tls: false             # у панелей обычно самоподписанный сертификат
+      timeout: 20
+    ssh:
+      host: 1.2.3.4
+      user: root
+      port: 22
+      key: ""                       # путь к ключу, если он не из ~/.ssh/config
+      password: ""                  # пароль, если доступ парольный (тогда ключ не нужен)
+      enabled: true                 # для не-root пользователя команды пойдут через sudo -S с этим же паролем
+    public_host: ""                 # домен/IP, которым коннектятся клиенты, если не совпадает с панелью
+    notes: "нидерланды, основной"
+
+  - name: fi-1
+    panel:
+      url: https://5.6.7.8:2053
+      api_token: "${ENV:FI1_TOKEN}"
+      verify_tls: false
+    ssh:
+      host: 5.6.7.8
+      user: root

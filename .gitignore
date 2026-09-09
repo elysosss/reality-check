@@ -1,0 +1,22 @@
+# secrets — never commit
+config/servers.yaml
+.env
+*.pem
+*.key
+
+# local artifacts
+.venv/
+tools/
+runs/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# файлы с исходными данными от рук
+фыв
+asd2
+
+# артефакты сборки
+*.egg-info/
+build/
+dist/
