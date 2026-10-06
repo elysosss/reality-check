@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reality-check"
+version = "0.1.0"
+description = "Диагностика и починка VPN на серверах с панелью 3x-ui поверх Xray"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = ["xray", "3x-ui", "vless", "reality", "vpn", "diagnostics"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Networking :: Monitoring",
+]
+dependencies = [
+    "requests>=2.32",
+    "PyYAML>=6.0",
+    "PySocks>=1.7.1",
+    "paramiko>=3.4",
+    "cryptography>=42.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/elysosss/reality-check"
+Issues = "https://github.com/elysosss/reality-check/issues"
+
+[project.scripts]
+reality-check = "reality_check.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["reality_check*"]
